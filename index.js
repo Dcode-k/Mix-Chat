@@ -13,13 +13,21 @@ const server = http.createServer((req, res)=>{
     url = req.url;
 
     res.statusCode = 200;
-    res.setHeader('Content-Type', 'text/html/css/javascript');
     if(url == '/'){
+        res.setHeader('Content-Type', 'text/html');
         res.end(home);
-        res.end(css);
-        res.end(client);
+        
     }
-   
+    if(url == '/'){
+        res.setHeader('Content-Type', 'text/css');
+        res.end(css);
+        
+    }
+    if(url == '/'){
+        res.setHeader('Content-Type', 'text/javascript');
+        res.end(client);
+        
+    }
 });
 
 var io = require('socket.io')(server, {
