@@ -23,7 +23,7 @@ const Name= prompt("Enter your name to join");
 socket.emit('new-user-joined',Name);
 // if new user joins ,receive his/her name from the server
 socket.on('user-joined',name=>{
-    append(`${name} joined the chat`,'right');
+    append(`${name} joined the chat`,'center');
 })
 // if server sends the message, receive it
 socket.on('receive',data=>{
