@@ -1,6 +1,21 @@
 // node server which will handel socket io connections
 const express = require('express')
 var app = express();
+
+
+const http = require('http')
+const server = http.createServer((req, res)=>{
+    console.log(req.url);
+    url = req.url;
+
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/html');
+    if(url == '/'){
+        res.end(home);
+    }
+   
+});
+
 var io = require('socket.io')(server, {
     cors: {
       origin: '*',
@@ -37,18 +52,6 @@ io.on('connection',socket=>{
 const fs = require('fs');
 const home = fs.readFileSync('index.html')
 
-const http = require('http')
-const server = http.createServer((req, res)=>{
-    console.log(req.url);
-    url = req.url;
-
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'text/html');
-    if(url == '/'){
-        res.end(home);
-    }
-   
-});
   
 const port = process.env.PORT || 8000
 server.listen(port,()=>
