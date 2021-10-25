@@ -1,35 +1,19 @@
 // node server which will handel socket io connections
 const express = require('express')
 var app = express();
-
-const fs = require('fs');
-const home = fs.readFileSync('index.html')
-const css=fs.readFileSync('style.css')
-const client=fs.readFileSync('client.js')
-
-const http = require('http')
-const server = http.createServer((req, res)=>{
-    console.log(req.url);
-    url = req.url;
-
-    res.statusCode = 200;
-    if(url == '/'){
-        res.setHeader('Content-Type', 'text/html');
-        res.end(home);
-        res.setHeader('Content-Type', 'text/css');
-        res.end(css);
-        res.setHeader('Content-Type', 'text/javascript');
-        res.end(client);
-    }
-    
-});
+const path = require("path");
+const http = require("http");
 
 var io = require('socket.io')(server, {
     cors: {
-      origin: '*',
+        origin: '*',
     }
 });
 
+const port = process.env.PORT || 8000
+const publicDirectoryPath = path.join(__dirname, "../public");
+
+app.use(express.static(publicDirectoryPath));
 
 
 // app.get('/', function(req, res) {
@@ -59,7 +43,6 @@ io.on('connection',socket=>{
 })
 
   
-const port = process.env.PORT || 8000
 server.listen(port,()=>
 {
     console.log("Listening at port => "+port)
