@@ -1,6 +1,11 @@
 // node server which will handel socket io connections
 const express = require('express')
 var app = express();
+var io = require('socket.io')(server, {
+    cors: {
+      origin: '*',
+    }
+});
 
 
 
@@ -49,9 +54,4 @@ const port = process.env.PORT || 8000
 server.listen(port,()=>
 {
     console.log("Listening at port => "+port)
-});
-var io = require('socket.io')(server, {
-    cors: {
-      origin: '*',
-    }
 });
