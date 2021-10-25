@@ -16,18 +16,12 @@ const server = http.createServer((req, res)=>{
     if(url == '/'){
         res.setHeader('Content-Type', 'text/html');
         res.end(home);
-        
-    }
-    if(url == '/'){
         res.setHeader('Content-Type', 'text/css');
         res.end(css);
-        
-    }
-    if(url == '/'){
         res.setHeader('Content-Type', 'text/javascript');
         res.end(client);
-        
     }
+    
 });
 
 var io = require('socket.io')(server, {
