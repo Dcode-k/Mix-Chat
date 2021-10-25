@@ -16,8 +16,12 @@ var io = require('socket.io')(server, {
       origin: '*',
     }
 });
+
+const fs = require('fs');
+const home = fs.readFileSync('index.html')
+
 app.get('/', function(req, res) {
-    res.send(index.html)
+    res.send(home)
 })
 const cors = require("cors")
 app.use(cors())
