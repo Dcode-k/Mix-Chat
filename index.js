@@ -1,4 +1,6 @@
 // node server which will handel socket io connections
+const express = require("express")
+var app = express();
 const http = require('http')
 var server = http.createServer(app);
   
