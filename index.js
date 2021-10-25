@@ -2,32 +2,6 @@
 const express = require('express')
 var app = express();
 
-const fs = require('fs');
-const home = fs.readFileSync('index.html')
-
-const http = require('http')
-const server = http.createServer((req, res)=>{
-    console.log(req.url);
-    url = req.url;
-
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'text/html');
-    if(url == '/'){
-        res.end(home);
-    }
-   
-});
-  
-const port = process.env.PORT || 8000
-server.listen(port,()=>
-{
-    console.log("Listening at port => "+port)
-});
-var io = require('socket.io')(server, {
-    cors: {
-      origin: '*',
-    }
-});
 
 
 // app.get('/', function(req, res) {
@@ -55,3 +29,29 @@ io.on('connection',socket=>{
         delete users[socket.id];
     })
 })
+const fs = require('fs');
+const home = fs.readFileSync('index.html')
+
+const http = require('http')
+const server = http.createServer((req, res)=>{
+    console.log(req.url);
+    url = req.url;
+
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/html');
+    if(url == '/'){
+        res.end(home);
+    }
+   
+});
+  
+const port = process.env.PORT || 8000
+server.listen(port,()=>
+{
+    console.log("Listening at port => "+port)
+});
+var io = require('socket.io')(server, {
+    cors: {
+      origin: '*',
+    }
+});
