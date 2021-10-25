@@ -5,7 +5,7 @@ var app = express();
 const fs = require('fs');
 const home = fs.readFileSync('index.html')
 const css=fs.readFileSync('style.css')
-const client=fs.readFileSync('client.css')
+const client=fs.readFileSync('client.js')
 
 const http = require('http')
 const server = http.createServer((req, res)=>{
