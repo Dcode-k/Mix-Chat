@@ -17,7 +17,7 @@ var io = require('socket.io')(server, {
     }
 });
 app.get('/', function(req, res) {
-    res.send('index.html')
+    res.send(index.html)
 })
 const cors = require("cors")
 app.use(cors())
