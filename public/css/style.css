@@ -67,7 +67,7 @@ clear: both;
     border-radius: 10px;
     height: 40px;
     width: 8vw;
-    
+    text-overflow: ;
 }
 h1{
     margin-top: 12px;

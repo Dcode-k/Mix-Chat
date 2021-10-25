@@ -12,7 +12,7 @@ const append=(message,position)=>{
     messageElement.classList.add('message');
     messageElement.classList.add(position);
     messagecontainer.append(messageElement);
-    if(position=='center'){
+    if(position=='center'||position=='left'){
 
         messageAudio.play();
     }
