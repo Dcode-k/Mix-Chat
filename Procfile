@@ -8,3 +8,4 @@ chat.jpg
 ting.wav
 package.json
 package-lock.json
+node_modules

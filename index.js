@@ -2,6 +2,8 @@
 const express = require('express')
 var app = express();
 
+const fs = require('fs');
+const home = fs.readFileSync('index.html')
 
 const http = require('http')
 const server = http.createServer((req, res)=>{
@@ -49,8 +51,6 @@ io.on('connection',socket=>{
         delete users[socket.id];
     })
 })
-const fs = require('fs');
-const home = fs.readFileSync('index.html')
 
   
 const port = process.env.PORT || 8000
