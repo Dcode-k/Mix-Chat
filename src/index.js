@@ -1,10 +1,11 @@
 // node server which will handel socket io connections
 const express = require('express')
 var app = express();
+const socketio = require("socket.io");
 const path = require("path");
 const http = require("http");
 const server = http.createServer(app);
-const io = socket.io(server);
+const io = socketio(server);
 
 // var io = require('socket.io')(server, {
 //     cors: {
