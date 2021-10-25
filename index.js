@@ -2,6 +2,8 @@
 const express = require('express')
 var app = express();
 
+const fs = require('fs');
+const home = fs.readFileSync('index.html')
 
 const http = require('http')
 const server = http.createServer((req, res)=>{
@@ -27,8 +29,6 @@ var io = require('socket.io')(server, {
     }
 });
 
-const fs = require('fs');
-const home = fs.readFileSync('index.html')
 
 // app.get('/', function(req, res) {
 //     res.send(home)
