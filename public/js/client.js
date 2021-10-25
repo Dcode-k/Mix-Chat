@@ -12,7 +12,7 @@ const append=(message,position)=>{
     messageElement.classList.add('message');
     messageElement.classList.add(position);
     messagecontainer.append(messageElement);
-    if(position=='left'){
+    if(position=='center'){
 
         messageAudio.play();
     }
@@ -32,7 +32,7 @@ socket.on('receive',data=>{
 })
 // if the user leaves the chat ,append it to the conatainer
 socket.on('left',name=>{
-    append(`${name} left the chat`,'left');
+    append(`${name} left the chat`,'center');
 })
 // if form gets submitted ,send the server the message
 form.addEventListener('submit',(e)=>{
