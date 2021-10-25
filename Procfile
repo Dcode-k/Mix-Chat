@@ -1,1 +1,10 @@
-web: node index.js
+web
+node
+index.js
+idex.html
+client.js
+style.css
+chat.jpg
+ting.wav
+package.json
+package-lock.json
