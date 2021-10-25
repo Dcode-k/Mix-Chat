@@ -1,4 +1,4 @@
-const socket= io('http://127.0.0.1:8080');
+const socket= io('http://127.0.0.1:8000');
 // get dom elements in respective variables
 const form=document.getElementById('send-container');
 const messageInput=document.getElementById('messageInp');

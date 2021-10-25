@@ -1,6 +1,8 @@
 // node server which will handel socket io connections
 const express = require("express")
 var app = express();
+
+
 const http = require('http')
 var server = http.createServer(app);
   
@@ -14,7 +16,9 @@ var io = require('socket.io')(server, {
       origin: '*',
     }
 });
-
+app.get('/', function(req, res) {
+    res.send('index.html')
+})
 const cors = require("cors")
 app.use(cors())
 
