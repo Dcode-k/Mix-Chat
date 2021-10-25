@@ -4,6 +4,8 @@ var app = express();
 
 const fs = require('fs');
 const home = fs.readFileSync('index.html')
+const css=fs.readFileSync('style.css')
+const client=fs.readFileSync('client.css')
 
 const http = require('http')
 const server = http.createServer((req, res)=>{
@@ -11,9 +13,11 @@ const server = http.createServer((req, res)=>{
     url = req.url;
 
     res.statusCode = 200;
-    res.setHeader('Content-Type', 'text/html');
+    res.setHeader('Content-Type', 'text/html/css/javascript');
     if(url == '/'){
         res.end(home);
+        res.end(css);
+        res.end(client);
     }
    
 });
