@@ -41,11 +41,11 @@ background-repeat: no-repeat;
 float: right;
 clear: both;
 }
-.center{
+/* .center{
     color:red;
     text-align: center;
      
-}
+} */
 #send-container{
     display: block;
     margin: auto;

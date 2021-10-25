@@ -12,7 +12,7 @@ const append=(message,position)=>{
     messageElement.classList.add('message');
     messageElement.classList.add(position);
     messagecontainer.append(messageElement);
-    if(position=='center'||position=='left'){
+    if(position=='left'){
 
         messageAudio.play();
     }
@@ -23,7 +23,7 @@ const Name= prompt("Enter your name to join");
 socket.emit('new-user-joined',Name);
 // if new user joins ,receive his/her name from the server
 socket.on('user-joined',name=>{
-    append(`${name} joined the chat`,'center');
+    append(`${name} joined the chat`,'left');
 })
 // if server sends the message, receive it
 socket.on('receive',data=>{
@@ -32,7 +32,7 @@ socket.on('receive',data=>{
 })
 // if the user leaves the chat ,append it to the conatainer
 socket.on('left',name=>{
-    append(`${name} left the chat`,'center');
+    append(`${name} left the chat`,'left');
 })
 // if form gets submitted ,send the server the message
 form.addEventListener('submit',(e)=>{
