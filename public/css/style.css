@@ -44,6 +44,9 @@ clear: both;
 .center{
     color:red;
     text-align: center;
+    align-items: center;
+    align-content: center;
+    margin:auto;
 }
 #send-container{
     display: block;
