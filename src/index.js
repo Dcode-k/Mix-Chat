@@ -6,11 +6,11 @@ const http = require("http");
 const server = http.createServer(app);
 const io = socketio(server);
 
-var io = require('socket.io')(server, {
-    cors: {
-        origin: '*',
-    }
-});
+// var io = require('socket.io')(server, {
+//     cors: {
+//         origin: '*',
+//     }
+// });
 
 const port = process.env.PORT || 8000
 const publicDirectoryPath = path.join(__dirname, "../public");
