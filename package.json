@@ -9,7 +9,11 @@
   "author": "Krishnkant",
   "license": "ISC",
   "dependencies": {
+    "cors":"^2.8.5",
     "nodemon": "^2.0.14",
     "socket.io": "^4.3.1"
+  },
+  "engines": {
+    "node": "14.x"
   }
 }
