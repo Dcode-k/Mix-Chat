@@ -24,6 +24,7 @@ while(Name==0){
     alert('enter the valid name');
     Name= prompt("Enter your name to join");
 }
+if(name!=0){
 socket.emit('new-user-joined',Name);
 // if new user joins ,receive his/her name from the server
 socket.on('user-joined',name=>{
@@ -46,3 +47,4 @@ form.addEventListener('submit',(e)=>{
   socket.emit('send',message);
   messageInput.value='';
 })
+}
