@@ -20,17 +20,15 @@ const append=(message,position)=>{
 
 // ask new user for his or her name and let the server know 
 Name= prompt("Enter your name to join");
-if(Name==0){
+while(Name==0){
     alert('enter the valid name');
     Name= prompt("Enter your name to join");
 }
-    else{
 socket.emit('new-user-joined',Name);
 // if new user joins ,receive his/her name from the server
 socket.on('user-joined',name=>{
     append(`${name} joined the chat`,'left');
 })
-    }
 // if server sends the message, receive it
 socket.on('receive',data=>{
     append(`${data.name}:${data.message}`,'left');
