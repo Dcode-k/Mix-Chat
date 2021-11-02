@@ -22,6 +22,7 @@ const append=(message,position)=>{
 const Name= prompt("Enter your name to join");
 if(Name==0){
     alert('enter the valid name');
+    Name= prompt("Enter your name to join");
 }
     else{
 socket.emit('new-user-joined',Name);
