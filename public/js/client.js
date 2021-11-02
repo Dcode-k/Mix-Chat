@@ -26,11 +26,11 @@ if(Name==0){
 }
     else{
 socket.emit('new-user-joined',Name);
-    }
 // if new user joins ,receive his/her name from the server
 socket.on('user-joined',name=>{
     append(`${name} joined the chat`,'left');
 })
+    }
 // if server sends the message, receive it
 socket.on('receive',data=>{
     append(`${data.name}:${data.message}`,'left');
