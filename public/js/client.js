@@ -19,7 +19,7 @@ const append=(message,position)=>{
 }
 
 // ask new user for his or her name and let the server know 
-const Name= prompt("Enter your name to join");
+Name= prompt("Enter your name to join");
 if(Name==0){
     alert('enter the valid name');
     Name= prompt("Enter your name to join");
