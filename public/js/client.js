@@ -30,6 +30,7 @@ socket.emit('new-user-joined',Name);
 socket.on('user-joined',name=>{
     append(`${name} joined the chat`,'left');
 })
+}
 // if server sends the message, receive it
 socket.on('receive',data=>{
     append(`${data.name}:${data.message}`,'left');
@@ -47,4 +48,3 @@ form.addEventListener('submit',(e)=>{
   socket.emit('send',message);
   messageInput.value='';
 })
-}
